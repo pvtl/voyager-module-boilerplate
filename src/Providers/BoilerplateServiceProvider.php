@@ -49,10 +49,6 @@ class BoilerplateServiceProvider extends ServiceProvider
     protected function strapPublishers()
     {
         // Defines which files to copy the root project
-        $this->publishes([
-            self::PACKAGE_DIR . 'database/migrations' => base_path('database/migrations'),
-            self::PACKAGE_DIR . 'database/seeds' => base_path('database/seeds'),
-        ]);
     }
 
     /**
@@ -61,6 +57,7 @@ class BoilerplateServiceProvider extends ServiceProvider
     protected function strapViews()
     {
         // Load views
+        $this->loadViewsFrom(self::PACKAGE_DIR . 'resources/views', 'voyager-boilerplate');
         $this->loadViewsFrom(self::PACKAGE_DIR . 'resources/views/vendor/voyager', 'voyager');
     }
 

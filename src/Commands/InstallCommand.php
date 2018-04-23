@@ -2,13 +2,18 @@
 
 namespace Pvtl\VoyagerBoilerplate\Commands;
 
+use Pvtl\VoyagerPages\Providers\BoilerplateServiceProvider;
+use TCG\Voyager\Traits\Seedable;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
-use Pvtl\VoyagerPages\Providers\BoilerplateServiceProvider;
 
 class InstallCommand extends Command
 {
+    use Seedable;
+
+    protected $seedersPath = __DIR__ . '/../../database/seeds/';
+
     /**
      * The console command name.
      *
@@ -62,7 +67,7 @@ class InstallCommand extends Command
         $this->call('migrate');
 
         $this->info('Seeding data into the database');
-        $this->call('db:seed', ['--class' => 'BoilerplateSeeder']);
+        $this->seed('BoilerplateDatabaseSeeder');
 
         $this->info('Successfully installed Voyager Boilerplate! Enjoy');
     }
