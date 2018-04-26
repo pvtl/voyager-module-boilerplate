@@ -2,7 +2,7 @@
 
 namespace Pvtl\VoyagerBoilerplate\Commands;
 
-use Pvtl\VoyagerPages\Providers\BoilerplateServiceProvider;
+use Pvtl\VoyagerBoilerplate\Providers\BoilerplateServiceProvider;
 use TCG\Voyager\Traits\Seedable;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
