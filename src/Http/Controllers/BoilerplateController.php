@@ -2,8 +2,8 @@
 
 namespace Pvtl\VoyagerBoilerplate\Http\Controllers;
 
-use TCG\Voyager\Http\Controllers\VoyagerBreadController as BaseVoyagerBreadController;
+use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 
-class BoilerplateController extends BaseVoyagerBreadController
+class BoilerplateController extends VoyagerBaseController
 {
 }
